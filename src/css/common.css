@@ -1,0 +1,1019 @@
+@charset "utf-8";
+
+/* font */
+@font-face {
+  font-family: "handon300";
+  src: url("../../public/assets/fonts/한돈\ 삼겹살체\ 300g.ttf")
+}
+
+@font-face {
+  font-family: "handon600";
+  src: url("../../public/assets/fonts/한돈\ 삼겹살체\ 600g.ttf")
+}
+
+
+:root {
+  --mc: #ffcc33;
+  --gc: #666666;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.Header .top {
+  line-height: 90px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.Header .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header .top h1 {
+  font-size: 0;
+  width: 15%;
+}
+
+.Header .top img {
+  width: 120px;
+}
+
+.Header .top form {
+  position: relative;
+}
+
+.Header .top input[type=search] {
+  border: none;
+  outline: none;
+  width: 500px;
+  height: 50px;
+  padding: 0 0 0 20px;
+  border: 1px solid #aaa;
+  border-radius: 30px;
+}
+
+.Header .top button {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--mc);
+}
+
+.Header .header_icons {
+  display: flex;
+  justify-content: end;
+  gap: 20px;
+  width: 15%;
+  color: var(--gc);
+}
+
+.Header .header_icons>div {
+  line-height: 1;
+  margin: auto 0;
+}
+
+.Header .header_icons a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.Header .header_icons i {
+  font-size: 30px;
+}
+
+.Header .header_icons span {
+  display: block;
+  font-size: 13px;
+}
+
+.Header .header_icons .right {
+  position: relative;
+}
+
+.Header .header_icons .cart_num {
+  position: absolute;
+  top: -5px;
+  right: 0px;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+  background: var(--mc);
+  color: #fff;
+}
+
+.Header .bottom {
+  line-height: 50px;
+  font-family: "handon600";
+  font-size: 18px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.Header .bottom .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.Header .bottom i {
+  font-size: 25px;
+  vertical-align: middle;
+  margin: 0 0 2px 0;
+}
+
+.Header .bottom .gnb {
+  display: flex;
+  gap: 50px;
+}
+
+.Header .bottom .gnb>li {
+  position: relative;
+}
+
+.Header .bottom .gnb>li~li::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -25px;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 15px;
+  background: #ccc;
+}
+
+.Header .s_gnb {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 130px;
+  border: 2px solid var(--mc);
+
+  background: #fff;
+  overflow: hidden;
+  visibility: hidden;
+  z-index: 999;
+}
+
+.Header .s_gnb li {
+  font-size: 15px;
+  line-height: 40px;
+  font-family: "Pretendard";
+  border-bottom: 1px solid #ddd;
+}
+
+.Header .s_gnb li:last-child {
+  border-bottom: none;
+}
+
+.Header .bottom .gnb>li:hover .s_gnb {
+  top: 45px;
+  visibility: visible;
+  transition: 0.5s;
+}
+
+.Header .bottom .login_join {
+  font-size: 15px;
+  font-family: "Pretendard";
+  text-align: end;
+  width: 15%;
+}
+
+.Header .bottom .login_join span~span::before {
+  content: "/";
+  margin: 0 5px;
+}
+
+.Header .total_menu {
+  cursor: pointer;
+  width: 15%;
+}
+
+.MainSlide figure {
+  position: relative;
+  height: 600px;
+}
+
+.Slide .itm01 {
+  background: url('../../public/assets/img/slide01.jpg') no-repeat center center/cover;
+}
+
+.Slide .itm02 {
+  background: url('../../public/assets/img/slide02.jpg') no-repeat center center/cover;
+}
+
+.Slide .container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 55px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.Slide .container p {
+  line-height: 1.2;
+}
+
+.Slide .container span {
+  color: var(--mc);
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.slick-dots li button {
+  width: 20px;
+  height: 10px;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 0;
+  border: none;
+  outline: none;
+  transition: 0.5s;
+}
+
+.slick-dots li.slick-active button {
+  width: 40px;
+}
+
+/* * {
+  outline: 1px solid pink;
+} */
+
+.FrontProduct {
+  padding: 100px 0 0 0;
+}
+
+.FrontProduct .title {
+  display: flex;
+}
+
+.FrontProduct .title h2 {
+  font-size: 35px;
+  font-family: "handon600";
+  margin: 0 0 30px 0;
+}
+
+.FrontProduct .title span {
+  font-size: 17px;
+  font-weight: 400;
+  margin: auto 0 30px auto;
+}
+
+.FrontProduct .title span i {
+  font-size: 15px;
+}
+
+
+.FrontProduct .content {
+  display: flex;
+  gap: 30px;
+}
+
+.FrontProduct .content figure {
+  position: relative;
+  flex: 1;
+}
+
+.FrontProduct figure img {
+  margin: 0 0 20px 0
+}
+
+.FrontProduct figure p {
+  font-size: 17px;
+}
+
+
+.FrontProduct figure .first {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 5px 0;
+}
+
+.FrontProduct figure span {
+  display: inline-block;
+  padding: 5px 7px 3px 7px;
+  font-size: 11px;
+  border: 1px solid #333;
+}
+
+.FrontProduct figure .second {
+  display: flex;
+  gap: 20px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.FrontProduct figure .sale {
+  color: var(--mc);
+  font-weight: 700;
+}
+
+.FrontProduct figure .o_price {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.FrontProduct figure .cart {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  font-size: 25px;
+  padding: 7px;
+  background: var(--mc);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+.EventBanner {
+  padding: 100px 0 0 0;
+}
+
+.EventBanner .container {
+  display: flex;
+  gap: 30px;
+}
+
+
+.Brands {
+  padding: 100px 0 0 0;
+}
+
+.Brands .slick-slider {
+  height: 140px;
+}
+
+.Footer {
+  padding: 50px 0;
+  background: #f7f7f7;
+  font-size: 15px;
+  font-weight: 300;
+}
+
+
+.Footer .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Footer .left h2 {
+  font-size: 0;
+}
+
+.Footer .left img {
+  width: 120px;
+}
+
+.Footer .center ul {
+  display: flex;
+  margin: 0 0 10px 0;
+}
+
+.Footer .center ul li~li::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 9px;
+  margin: 0 20px;
+  background: #ddd;
+}
+
+.Footer .center .fifth {
+  margin: 0 0 30px 0;
+}
+
+.Footer .right {
+  display: flex;
+  flex-direction: column;
+}
+
+.Footer .right>p {
+  font-size: 24px;
+  font-family: "handon600";
+}
+
+.Footer .right>p a {
+  display: block;
+}
+
+.Footer .right>p span {
+  font-size: 30px;
+}
+
+.Footer .right .time {
+  text-align: end;
+}
+
+.Footer .right .family {
+  margin: auto 0 0 0;
+  display: flex;
+  justify-content: end;
+  gap: 15px;
+}
+
+.Footer .right .family img {
+  cursor: pointer;
+}
+
+/* * {
+  outline: 1px solid pink;
+} */
+
+.Product {
+  padding: 50px 0;
+}
+
+
+.Product h2 {
+  font-size: 35px;
+  font-family: "handon600";
+  margin: 0 0 50px 0;
+  text-align: center;
+}
+
+.Product .title span {
+  font-size: 17px;
+  font-weight: 500;
+  margin: auto 0 30px auto;
+}
+
+.Product .title span i {
+  font-size: 15px;
+}
+
+
+.Product .content {
+  gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.Product .content figure {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.Product figure img {
+  margin: 0 0 20px 0;
+  width: 100%;
+}
+
+.Product figure p {
+  font-size: 17px;
+}
+
+
+.Product figure .first {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 5px 0;
+}
+
+.Product figure span {
+  display: inline-block;
+  padding: 5px 7px 3px 7px;
+  font-size: 11px;
+  border: 1px solid #333;
+}
+
+.Product figure .second {
+  display: flex;
+  gap: 20px;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+}
+
+.Product figure .sale {
+  color: var(--mc);
+  font-weight: 700;
+}
+
+.Product figure .o_price {
+  color: #999;
+  text-decoration: line-through;
+}
+
+.Product figure .cart {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  font-size: 25px;
+  padding: 7px;
+  background: var(--mc);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+}
+
+.ProductDetail {
+  padding: 50px 0;
+}
+
+.ProductDetail .container {
+  display: flex;
+  gap: 50px;
+  margin: 0 auto 50px auto;
+}
+
+.ProductDetail .container>div {
+  flex: 1;
+}
+
+.ProductDetail .container>.left img {
+  width: 100%;
+}
+
+.ProductDetail .container>.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ProductDetail .info {
+  display: flex;
+}
+
+.ProductDetail .info .left {
+  flex: 1
+}
+
+.ProductDetail .right .title {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 3px 0;
+  border-bottom: 1px solid #aaa;
+  font-size: 25px;
+}
+
+.ProductDetail .right .title i {
+  cursor: pointer;
+}
+
+.ProductDetail .info ul {
+  margin: 20px 0;
+}
+
+.ProductDetail .info li {
+  font-size: 15px;
+  color: #666;
+  margin: 0 0 20px 0;
+}
+
+.ProductDetail .info .this {
+  font-size: 19px;
+  font-weight: 700;
+  color: #000;
+}
+
+.ProductDetail .info .last {
+  margin: 0;
+}
+
+.ProductDetail .price {
+  display: flex;
+  line-height: 70px;
+  font-weight: 700;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+
+.ProductDetail .price .num {
+  margin: 0 20px 0 auto;
+}
+
+.ProductDetail .price input[type=number] {
+  width: 60px;
+  text-align: center;
+  font-weight: 400;
+  border: 1px solid #ddd;
+}
+
+.ProductDetail .total_price {
+  line-height: 70px;
+  text-align: end;
+}
+
+.ProductDetail .total_price span {
+  display: inline-block;
+  margin: 0 0 20px 15px;
+  font-weight: 700;
+  font-size: 21px;
+}
+
+.ProductDetail .btns {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+.ProductDetail .btns .cart_btn a,
+.ProductDetail .btns .like_btn a {
+  display: block;
+  width: 170px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.ProductDetail .btns .cart_btn a {
+  background: #ddd;
+}
+
+.ProductDetail .btns .buy_btn a {
+  display: block;
+  width: 210px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 10px;
+  background: #444;
+  border: 1px solid #444;
+  color: #fff;
+}
+
+.ProductDetail .del {
+  width: 1200px;
+  margin: 0 auto 50px auto;
+}
+
+.ProductDetail .bottom_container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.Event {
+  padding: 50px 0;
+}
+
+.Event h2 {
+  font-size: 35px;
+  font-family: "handon600";
+  text-align: center;
+}
+
+.Event .tab {
+  display: flex;
+  padding: 0 0 5px 0;
+  margin: 0 0 30px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.Event .tab li~li::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 9px;
+  margin: 0 20px;
+  background: #ccc;
+}
+
+.Event .content a~a {
+  display: block;
+  margin: 10px 0 0 0;
+}
+
+
+.PopNav {
+  display: none;
+  position: absolute;
+  top: 142px;
+  left: 352px;
+  width: 300px;
+  border: 2px solid var(--mc);
+  background: #fff;
+  z-index: 9999;
+  padding: 40px
+}
+
+.PopNav.on {
+  display: block;
+}
+
+.PopNav .gnb>li~li {
+  margin: 30px 0 0 0;
+}
+
+.PopNav .gnb>li>a {
+  display: block;
+  font-size: 19px;
+  font-family: "handon600";
+  padding: 0 0 5px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.PopNav .p_sgnb>li {
+  width: 150px;
+  line-height: 25px;
+  font-weight: 300;
+}
+
+.PopNav .p_sgnb>li a {
+  display: block;
+}
+
+.Basket {
+  padding: 50px 0;
+}
+
+.Basket h2 {
+  font-size: 35px;
+  font-family: "handon600";
+  margin: 0 0 50px 0;
+  text-align: center;
+}
+
+.Basket .top {
+  position: relative;
+}
+
+.Basket .top img {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  height: 150%;
+}
+
+.Basket .content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 400px;
+  padding: 40px 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+}
+
+.Basket .content ul {
+  display: flex;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 30px;
+  font-size: 17px;
+}
+
+.Basket .content ul li {
+  line-height: 90px;
+}
+
+.Basket .content ul li img {
+  height: 90px;
+}
+
+.Basket .num,
+.Basket .image,
+.Basket .del {
+  margin: 0 15px 0 0;
+  color: #888;
+}
+
+.Basket .name {
+  font-size: 19px;
+  width: 500px;
+  margin: 0 10px 0 0;
+}
+
+.Basket .price {
+  margin: 0 10px 0 auto;
+  color: #888;
+}
+
+.Basket .btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Basket .btn button {
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 4px 10px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.Basket .btn button:nth-child(1) {
+  background: var(--mc);
+}
+
+.Basket .btn button:nth-child(3) {
+  background: transparent;
+  border: 1px solid #ddd;
+}
+
+.Basket .total_price {
+  font-size: 21px;
+  text-align: end;
+  margin: 30px 0 0 0;
+}
+
+.Basket .total_price span {
+  font-weight: 700;
+  margin: 0 30px 0 10px;
+}
+
+.Basket .none {
+  text-align: center;
+}
+
+.Board .btn {
+  width: 100px;
+  height: 30px;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background: var(--mc);
+}
+
+.Board h2 {
+  font-size: 35px;
+  font-family: "handon600";
+  margin: 50px 0;
+  text-align: center;
+}
+
+.Board .container {}
+
+.Board .BoardTable {
+  width: 100%;
+  border-top: 2px solid var(--mc);
+  margin: 30px 0 50px 0;
+}
+
+.Board .BoardTable thead {
+  line-height: 36px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ced4da;
+  font-size: 13px;
+}
+
+.Board .BoardTable tbody {
+  line-height: 36px;
+  font-size: 15px;
+}
+
+.Board .BoardTable tr {
+  border-bottom: 1px solid #ced4da;
+}
+
+.Board .BoardTable tr:nth-child(even) {
+  background: #f8f9fa;
+}
+
+.Board .BoardTable .no {
+  width: 30px;
+  text-align: center;
+}
+
+.Board .BoardTable .writer {
+  width: 100px;
+  text-align: center;
+}
+
+.Board .BoardTable .date {
+  width: 100px;
+  text-align: center;
+}
+
+.Board .BoardTable .tit {
+  min-width: 100px;
+  text-align: center;
+}
+
+.Board .BoardTable .tit_con {
+  text-align: left;
+  padding: 0 0 0 10px;
+  font-size: 17px;
+}
+
+.Board .nolist {
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px 0 50px 0;
+  min-height: 200px;
+}
+
+.Board .btn_box {
+  text-align: right;
+}
+
+.Board .write_form>* {
+  display: block;
+  margin: 0 0 30px 0;
+}
+
+.Board .input_box {
+  display: flex;
+  gap: 20px;
+  margin: 0 0 20px 0;
+}
+
+.Board .input_box input {
+  height: 30px;
+  padding: 20px;
+  outline: none;
+  border: none;
+  border: 1px solid #ced4da;
+}
+
+.Board .input_box input[name="writer"] {
+  flex: 1
+}
+
+.Board .input_box input[name="title"] {
+  flex: 5
+}
+
+.Board .write_box textarea {
+  padding: 20px;
+  width: 100%;
+  min-height: 300px;
+  outline: none;
+  border: none;
+  border: 1px solid #ced4da;
+}
+
+.Board .write_box .btn_box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 0 50px 0;
+}
+
+.Board .detail_box .content_box {
+  border: 1px solid #ced4da;
+  padding: 30px;
+  margin: 0 0 30px 0;
+}
+
+.Board .detail_box .content_box>div {
+  display: flex;
+  line-height: 2;
+}
+
+.Board .detail_box .tit {
+  font-size: 21px;
+  font-weight: 500;
+  border-bottom: 1px solid #ddd;
+  margin: 0 0 15px 0;
+}
+
+.Board .detail_box .writer,
+.Board .detail_box .date {
+  display: inline-block;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.Board .detail_box .writer span,
+.Board .detail_box .date span {
+  margin: 0 10px 0 0;
+}
+
+.Board .detail_box .date {
+  margin: 0 0 10px 0;
+}
+
+.Board .detail_box .content {
+  max-width: 100%;
+  min-height: 200px;
+  word-break: break-all;
+}
+
+.Board .detail_box .btn_box {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 0 50px 0;
+}
