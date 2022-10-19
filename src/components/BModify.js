@@ -7,7 +7,7 @@ const BModify = ({ list, setList }) => {
   const { id } = useParams()
 
   useEffect(() => {
-    axios.get("https://handon-again.herokuapp.com/board", {}).then((res) => {
+    axios.get("https://handon-again.herokuapp.com/board").then((res) => {
       const { data } = res;
       setList([...data])
     })
@@ -25,7 +25,7 @@ const BModify = ({ list, setList }) => {
   })
 
   const Modify = () => {
-    axios.post("/board/modify", {
+    axios.post("https://handon-again.herokuapp.com/board/modify", {
       title: input.title,
       writer: input.writer,
       content: input.content,

@@ -30,7 +30,7 @@ const BDetail = () => {
   }
 
   const deleteHandler = () => {
-    axios.post("/board/delete", {
+    axios.post("https://handon-again.herokuapp.com/board/delete", {
       match_id: id
     }).then((res) => { console.log(res) })
     GO('/board/')
