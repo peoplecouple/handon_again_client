@@ -24,7 +24,7 @@ const BList = ({ list, setList }) => {
         <button onClick={() => GO('/board/write')} className='btn'>작성하기</button>
       </div>
       {
-        list.length != 0 ?
+        list.length !== 0 ?
           <table className='BoardTable'>
             <thead>
               <tr>

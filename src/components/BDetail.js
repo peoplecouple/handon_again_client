@@ -9,7 +9,7 @@ const BDetail = () => {
   const [match, setMatch] = useState({})
 
   useEffect(() => {
-    axios.post('https://handon-again.herokuapp.com/board/detail/',  { match_id: id })
+    axios.post('https://handon-again.herokuapp.com/board/detail/', { match_id: id })
       .then((res) => {
         setMatch({
           title: res.data[0].BOARD_TITLE,
