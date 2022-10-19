@@ -2,10 +2,8 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const BWrite = () => {
+const BWrite = ({ input, setInput }) => {
   const GO = useNavigate()
-  const [input, setInput] = useState({})
-
 
   const Write = () => {
     axios.post("https://handon-again.herokuapp.com/board/write", {

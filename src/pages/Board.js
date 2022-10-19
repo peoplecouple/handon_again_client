@@ -10,14 +10,15 @@ import BWrite from '../components/BWrite'
 
 const Board = () => {
   const [list, setList] = useState([])
+  const [input, setInput] = useState({})
 
   return (
     <section className='Board'>
       <h2>리뷰 게시판</h2>
       <div className="container">
         <Routes>
-          <Route path="/" element={<BList list={list} setList={setList} />} />
-          <Route path="/write" element={<BWrite />} />
+          <Route path="/" element={<BList input={input} list={list} setList={setList} />} />
+          <Route path="/write" element={<BWrite input={input} setInput={setInput} />} />
           <Route path="/modify/:id" element={<BModify list={list} setList={setList} />} />
           <Route path="/detail/:id" element={<BDetail />} />
         </Routes>

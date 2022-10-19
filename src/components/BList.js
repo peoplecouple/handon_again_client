@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
-const BList = ({ list, setList }) => {
+const BList = ({ input, list, setList }) => {
   const GO = useNavigate()
 
 
@@ -14,7 +14,7 @@ const BList = ({ list, setList }) => {
         setList([...data])
       })
       .catch((error) => { console.log(error) })
-  }, [])
+  }, [input])
 
 
 
