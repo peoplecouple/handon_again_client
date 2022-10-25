@@ -877,7 +877,9 @@
   text-align: center;
 }
 
-.Board .container {}
+.Board .container {
+  min-height: 400px;
+}
 
 .Board .BoardTable {
   width: 100%;
