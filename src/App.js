@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <>
-      <Header NAV={NAV} MEAT={MEAT} sInput={sInput} setSInput={setSInput}  setSearch={setSearch} />
+      <Header NAV={NAV} MEAT={MEAT} sInput={sInput} setSInput={setSInput} setSearch={setSearch} />
       <Routes>
         <Route path='/' element={<Main />} />
         <Route path='/search' element={<Search MEAT={MEAT} searchRe={searchRe} />} />
