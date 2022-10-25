@@ -22,6 +22,15 @@
   margin: 0 auto;
 }
 
+.none {
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
 .Header .top {
   line-height: 90px;
   border-bottom: 1px solid #f4f4f4;
@@ -45,7 +54,7 @@
   position: relative;
 }
 
-.Header .top input[type=search] {
+.Header .top input[type=text] {
   border: none;
   outline: none;
   width: 500px;
@@ -262,9 +271,6 @@
   width: 40px;
 }
 
-/* * {
-  outline: 1px solid pink;
-} */
 
 .FrontProduct {
   padding: 100px 0 0 0;
@@ -443,14 +449,21 @@
   cursor: pointer;
 }
 
-/* * {
-  outline: 1px solid pink;
-} */
+
 
 .Product {
   padding: 50px 0;
 }
 
+.Product .container {
+  position: relative;
+}
+
+.Product .snum {
+  position: absolute;
+  top: 60px;
+  right: 0;
+}
 
 .Product h2 {
   font-size: 35px;
@@ -458,6 +471,10 @@
   margin: 0 0 50px 0;
   text-align: center;
 }
+
+/* * {
+  outline: 1px solid pink;
+} */
 
 .Product .title span {
   font-size: 17px;
@@ -743,6 +760,11 @@
   padding: 50px 0;
 }
 
+/* *{
+  outline: 1px solid pink;
+} */
+
+
 .Basket h2 {
   font-size: 35px;
   font-family: "handon600";
@@ -766,9 +788,6 @@
   flex-direction: column;
   gap: 10px;
   min-height: 400px;
-  padding: 40px 0;
-  border-top: 1px solid #aaa;
-  border-bottom: 1px solid #aaa;
 }
 
 .Basket .content ul {
@@ -776,6 +795,7 @@
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   padding: 10px 30px;
+  margin-bottom: 5px;
   font-size: 17px;
 }
 
@@ -840,9 +860,6 @@
   margin: 0 30px 0 10px;
 }
 
-.Basket .none {
-  text-align: center;
-}
 
 .Board .btn {
   width: 100px;
@@ -921,7 +938,7 @@
   align-items: center;
   justify-content: center;
   margin: 30px 0 50px 0;
-  min-height: 200px;
+  min-height: 300px;
 }
 
 .Board .btn_box {

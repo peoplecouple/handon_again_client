@@ -1,21 +1,31 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-import {Add} from '../app/store'
+import { Link } from 'react-router-dom'
+import { Add } from '../app/store'
 
-const Product = ({ page, url, title }) => {
+const Search = ({ MEAT, searchRe }) => {
+  if (searchRe === "") { 
+    searchRe = "검색불가"
+  }
+  console.log(searchRe)
+  const searchList =  MEAT.filter(el => el.name.includes(searchRe))
   const dispatch = useDispatch()
 
   return (
-    <section className='Product'>
-      <div className="container">
-        <h2>{title}</h2>
-        <div className='content'>
-          {
-            page.map((el, idx) => {
+    <section className='searchList Product'>
+      <div className='container'>
+        <h2>검색 결과</h2>
+        <span className='snum'>찾은 상품 : {searchList.length}개</span>
+
+        {searchList.length !== 0 ?
+          <div className='content'>
+            {searchList.map((el, idx) => {
               return (
                 <figure key={el.id}>
-                  <Link to={url + el.id}>
+                  <Link to={
+                    el.id <= 12 ? `/recommand/${el.cate}/` + el.id
+                      : `/part/${el.cate}/` + el.id
+                  }>
                     <img src={process.env.PUBLIC_URL + el.img} alt="" />
                     <div className='first'>
                       <p className='name'>{el.name}</p>
@@ -47,13 +57,13 @@ const Product = ({ page, url, title }) => {
 
                 </figure>
               )
-            })
-          }
-        </div>
-
+            })}
+          </div>
+          : <div className='none'>검색 결과가 없습니다.</div>
+        }
       </div>
     </section>
   )
 }
 
-export default Product
+export default Search

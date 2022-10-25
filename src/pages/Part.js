@@ -3,17 +3,19 @@ import { Route, Routes } from 'react-router-dom'
 import Product from './Product'
 import ProductDetail from './ProductDetail'
 
-const Part = ({ BELLY, NECK, RIB, cart, setCart, ncart, setNcart}) => {
+const Part = ({ MEAT }) => {
+  const Belly = MEAT.filter(el => el.cate === 'belly')
+  const Neck = MEAT.filter(el => el.cate === 'neck')
+  const Rib = MEAT.filter(el => el.cate === 'rib')
+
   return (
     <Routes>
-      <Route path='/belly' element={<Product page={BELLY} url={'/part/belly/'} title={'삼겹살'} cart={cart} setCart={setCart} ncart={ncart} setNcart={setNcart}/>} />
-      <Route path='/neck' element={<Product page={NECK} url={'/part/neck/'} title={'목살'} cart={cart} setCart={setCart} ncart={ncart} setNcart={setNcart}/>} />
-      <Route path='/rib' element={<Product page={RIB} url={'/part/rib/'} title={'갈비'} cart={cart} setCart=
-        {setCart} ncart={ncart} setNcart={setNcart}/>} />
-
-      <Route path='/belly/:id' element={<ProductDetail page={BELLY} cart={cart} setCart={setCart} ncart={ncart} setNcart={setNcart}/>} />
-      <Route path='/neck/:id' element={<ProductDetail page={NECK} cart={cart} setCart={setCart} ncart={ncart} setNcart={setNcart}/>} />
-      <Route path='/rib/:id' element={<ProductDetail page={RIB} cart={cart} setCart={setCart} ncart={ncart} setNcart={setNcart}/>} />
+      <Route path='/belly' element={<Product page={Belly} url={'/part/belly/'} title={'삼겹살'} />} />
+      <Route path='/neck' element={<Product page={Neck} url={'/part/neck/'} title={'목살'} />} />
+      <Route path='/rib' element={<Product page={Rib} url={'/part/rib/'} title={'갈비'} />} />
+      <Route path='/belly/:id' element={<ProductDetail page={Belly} />} />
+      <Route path='/neck/:id' element={<ProductDetail page={Neck} />} />
+      <Route path='/rib/:id' element={<ProductDetail page={Rib} />} />
     </Routes>
   )
 }

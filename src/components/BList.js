@@ -41,7 +41,7 @@ const BList = ({ input, list, setList }) => {
                     <td className='no'>{el.BOARD_id}</td>
                     <td className='tit_con'><Link to={'/board/detail/' + el.BOARD_id}>{el.BOARD_TITLE}</Link></td>
                     <td className='writer'>{el.BOARD_WRITER}</td>
-                    <td className='date'>{el.BOARD_DATE}</td>
+                    <td className='date'>{(el.BOARD_DATE).substr(0, 10)}</td>
 
                   </tr>
                 ).reverse()

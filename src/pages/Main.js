@@ -4,11 +4,11 @@ import EventBanner from '../components/EventBanner'
 import FrontProduct from '../components/FrontProduct'
 import MainSlide from '../components/MainSlide'
 
-const Main = ({cart, setCart, setNcart}) => {
+const Main = () => {
   return (
     <>
     <MainSlide/>
-    <FrontProduct cart={cart} setCart={setCart} setNcart={setNcart}/>
+    <FrontProduct/>
     <EventBanner/>
     <Brands/>
     </>

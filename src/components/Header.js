@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import PopNav from './PopNav.js'
 import { useSelector } from 'react-redux'
+import SearchForm from './SearchForm.js'
 
 
 
-const Header = ({ NAV }) => {
+const Header = ({ NAV, sInput, setSInput, setSearch }) => {
   const store = useSelector((state) => state)
   const [togglePop, setTogglePop] = useState(false)
   return (
@@ -19,12 +20,7 @@ const Header = ({ NAV }) => {
               </Link>
             </h1>
 
-            <form action="">
-              <input type="search" placeholder='검색어를 입력하세요' required />
-              <button>
-                <i className='xi-search'></i>
-              </button>
-            </form>
+            <SearchForm sInput={sInput} setSInput={setSInput} setSearch={setSearch} />
 
             <div className="header_icons">
               <div className="left">
