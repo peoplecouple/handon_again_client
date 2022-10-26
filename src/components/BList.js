@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const BList = ({ input, list, setList }) => {
   const GO = useNavigate()
+  const { pathname } = useLocation();
 
 
 
@@ -14,7 +15,7 @@ const BList = ({ input, list, setList }) => {
         setList([...data])
       })
       .catch((error) => { console.log(error) })
-  }, [input])
+  }, [pathname, input])
 
 
 
